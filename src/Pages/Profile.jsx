@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import background from '../Images/leaf.jpg';
 
 function Profile() {
+  const location = useLocation();
+  const {name} = location.state || {};
+
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
       <main className="container mx-auto p-4 flex items-center justify-center">
@@ -52,7 +57,7 @@ function Profile() {
 </svg>
 
           <div className="mt-2 ml-2">
-            <p className="text-xl font-bold">Welcome $Username</p>
+            <p className="text-xl font-bold">Welcome {name}!</p>
           </div>
         </div>
       </main>

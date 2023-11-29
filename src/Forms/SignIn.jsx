@@ -10,21 +10,24 @@ function SignIn() {
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-   const navigate = useNavigate()
-
+  const navigate = useNavigate()
   const [showSignUp, setShowSignUp] = useState(false);
-
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/login', { email, password})
-    .then(result => {console.log(result)
-           if(result.data === "success") {
-            navigate('/profile')
-           }
-    })
-    .catch(err => {console.log(err)})
+    axios.post('http://localhost:3001/login', { email, password })
+      .then((result) => {
+        console.log(result);
+        const { data } = result;
+        if (data.message === 'success') {
+          console.log('Navigating to /profile with name:', data.name);
+          navigate('/profile', { state: { name: data.name } });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleSignUpClick = () => {
