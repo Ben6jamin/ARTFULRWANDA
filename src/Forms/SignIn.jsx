@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import SignUp from './SignUp';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,7 @@ function SignIn() {
   const [password, setPassword] = useState()
   const navigate = useNavigate()
   const [showSignUp, setShowSignUp] = useState(false);
+
 
 
   const handleSubmit = (e) => {
@@ -37,6 +38,16 @@ function SignIn() {
   const closeSignUp = () => {
     setShowSignUp(false);
   };
+
+
+
+
+
+
+
+
+
+
 
   return (
 

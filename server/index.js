@@ -1,6 +1,7 @@
 const express = require ("express")
 const mongoose = require ("mongoose")
-const cors = require ("cors")
+const cors = require ("cors");
+
 
 
 
@@ -61,7 +62,6 @@ app.post('/register', (req, res) => {
     .then(employees => res.json(employees))
     .catch(err => res.json(err) )
 })
-
 
 
 

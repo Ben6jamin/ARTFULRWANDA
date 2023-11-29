@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../Layout/Navbar';
+import Navbar1 from '../Layout/Navbar1';
 import Footer from '../Layout/Footer';
 import background from '../Images/leaf.jpg';
 
@@ -11,7 +11,7 @@ const Event = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
-      <Navbar />
+      <Navbar1 />
 
       <main className="flex-1 mx-4 my-8 md:mx-8 lg:mx-16 xl:mx-24">
       <a href={externalLink1} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
