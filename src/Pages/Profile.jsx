@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 import { Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import background from '../Images/leaf.jpg';
 
-function Profile() {
+const Profile = () =>  {
   const location = useLocation();
   const {name} = location.state || {};
+  const navigate = useNavigate()
 
 
 
 
+  const handleLogout = async () => {
+    try {
+      // Make a request to the logout route
+      await axios.post('http://localhost:3001/logout');
+      // Assuming you have a function to handle local state/logic for logout
+      // You might redirect the user to the login page or update your state accordingly
+      console.log('Logout successful');
+      navigate('/login');
 
 
+    } catch (error) {
+      console.error('Logout failed', error);
+    }
+  };
 
 
-
-  return (
+return (
     <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
       <main className="container mx-auto p-4 flex items-center justify-center">
         <div className="flex flex-col items-center justify-center">
@@ -44,7 +58,7 @@ function Profile() {
 
             <span className="ml-2">Event</span>
           </Link>
-          <button className="mt-8 flex items-center" >
+          <button className="mt-8 flex items-center" onClick={handleLogout}>
 
               {/* SVG path for your third icon */}
               <svg width={59} height={57} viewBox="0 0 59 57" fill="none" xmlns="http://www.w3.org/2000/svg">

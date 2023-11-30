@@ -1,16 +1,24 @@
 const express = require ("express")
 const mongoose = require ("mongoose")
 const cors = require ("cors");
-
-
-
-
+const session = require('express-session');
 const EmployeeModel = require("./models/Employee")
 
 
 const app = express();
 app.use(express.json());
 app.use(cors())
+
+
+// Use express-session middleware
+app.use(session({
+  secret: '123', // Change this to a secure key
+  resave: false,
+  saveUninitialized: true,
+}));
+
+
+
 
 
 const mongoURI="mongodb+srv://Benjamin:123@cluster0.ftdnvds.mongodb.net/?retryWrites=true&w=majority";
@@ -62,6 +70,22 @@ app.post('/register', (req, res) => {
     .then(employees => res.json(employees))
     .catch(err => res.json(err) )
 })
+
+
+
+// Logout route
+app.post('/logout', (req, res) => {
+  // Clear the session
+  req.session.destroy((err) => {
+    if (err) {
+      res.status(500).json({ message: 'Logout failed' });
+    } else {
+      res.status(200).json({ message: 'Logout successful' });
+    }
+  });
+});
+
+
 
 
 
