@@ -1,4 +1,3 @@
-
 # ArtfulRwanda
 
 ArtfulRwanda is a dynamic and culturally sensitive online platform designed to showcase the rich tapestry of Rwandan arts, design, and culture. This repository contains the source code for the ArtfulRwanda web application.
@@ -35,3 +34,15 @@ Before you begin, make sure you have the following installed on your machine:
 ```bash
 git clone https://github.com/your-username/ArtfulRwanda.git
 cd ArtfulRwanda
+
+### Install Dependencies
+```bash```
+# Inside the Frontend folder
+cd Frontend
+npm install
+
+# Inside the Backend folder
+cd ../Backend
+npm install
+
+
