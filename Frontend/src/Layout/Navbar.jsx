@@ -20,7 +20,7 @@ const Navbar = () => {
             item.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
-        // Do something with the search results (e.g., update the UI)
+        // Do something with the search results 
         console.log(searchResults);
     };
 

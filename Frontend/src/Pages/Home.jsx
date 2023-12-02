@@ -178,11 +178,11 @@ font-Poppins leading-normal p-4">
 
 
 <div id='event-section' className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10">
-  {/* Grid Item 1 */}
+ 
   <div className=" flex-shrink-0 w-full md:w-auto md:h-[13.9375rem] flex items-center">
     <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
       <img
-        src="src\Images\Ben.jpg"
+        src="/Images/Ben.jpg"
         alt="Author Photo"
         className="object-cover w-full h-full"
       />
@@ -202,11 +202,11 @@ font-Poppins leading-normal p-4">
 
 
 
-  {/* Grid Item 2 */}
+
   <div className=" flex-shrink-0 w-full md:w-auto md:h-[13.9375rem] flex items-center">
     <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
       <img
-        src="src\Images\test1.jpeg"
+        src="/Images/test1.jpeg"
         alt="Author Photo"
         className="object-cover w-full h-full"
       />
@@ -226,12 +226,12 @@ font-Poppins leading-normal p-4">
 
 
 
-  {/* Grid Item 3 */}
+
 
   <div className=" flex-shrink-0 w-full md:w-auto md:h-[13.9375rem] flex items-center">
     <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
       <img
-        src="src\Images\test2.jpeg"
+        src="/Images/test2.jpeg"
         alt="Author Photo"
         className="object-cover w-full h-full"
       />
@@ -248,12 +248,12 @@ font-Poppins leading-normal p-4">
 
 
 
-  {/* Grid Item 4 */}
+
 
   <div className=" flex-shrink-0 w-full md:w-auto md:h-[13.9375rem] flex items-center">
     <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
       <img
-        src="src\Images\test3.jpeg"
+        src="/Images/test3.jpeg"
         alt="Author Photo"
         className="object-cover w-full h-full"
       />
