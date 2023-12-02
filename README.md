@@ -43,7 +43,7 @@ cd Frontend
 npm install
 
 # Inside the Backend folder
-cd ../Backend
+cd ../server
 npm install
 ```
 ###  Configure MongoDB
