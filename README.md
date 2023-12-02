@@ -34,9 +34,10 @@ Before you begin, make sure you have the following installed on your machine:
 ```bash
 git clone https://github.com/your-username/ArtfulRwanda.git
 cd ArtfulRwanda
-
+```
 ### Install Dependencies
-```bash```
+
+```bash
 # Inside the Frontend folder
 cd Frontend
 npm install
@@ -44,5 +45,62 @@ npm install
 # Inside the Backend folder
 cd ../Backend
 npm install
+```
+###  Configure MongoDB
+
+Install and run MongoDB locally or provide a connection string in `Backend/.env`:
+
+```env
+MONGODB_URI=mongodb://localhost:27017/artfulrwanda
+
+```
+
+### Configure Backend
+
+Create a .env file in the Backend folder and set the following variables:
+
+```env
+SECRET_KEY=your_secret_key
+```
+Replace your_secret_key with a secure key for JWT token generation.
+
+### Run the Application
+
+Start the Backend server:
+
+# Inside the Backend folder
+```bash
+npm start
+```
+Start the Frontend development server:
+
+# Inside the Frontend folder
+```bash
+npm run dev
+```
+
+## Usage
+
+- **Sign Up:**
+  - Create a new account by navigating to the sign-up page.
+
+- **Log In:**
+  - Log in using your credentials to access the full functionality of the platform.
+
+- **Profile Page:**
+  - After logging in, visit your profile page to explore your account details.
+
+- **Artwork Page:**
+  - Access the artwork page to showcase and explore the diverse creations of artists.
+
+- **Event Page:**
+  - Explore and engage with events related to Rwandan arts and culture.
+
+
+
+
+
+
+
 
 
