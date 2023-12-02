@@ -97,8 +97,14 @@ npm run dev
   - Explore and engage with events related to Rwandan arts and culture.
 
 
+## Deployment
+
+The ArtfulRwanda web application is deployed at [Deployment Link]. Visit the deployment to experience the platform online.
 
 
+## Contributing
+
+Feel free to contribute, report issues, or explore additional features to enhance the ArtfulRwanda experience!
 
 
 
