@@ -18,7 +18,7 @@ function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/login', { email, password })
+    axios.post('https://artfulrwanda-api.vercel.app/login', { email, password })
       .then((result) => {
         console.log(result);
         const { data } = result;
