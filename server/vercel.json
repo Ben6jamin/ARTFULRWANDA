@@ -1,12 +1,13 @@
 {
-    "version":2,
-    "builds": [
-      { "src": "*.js", "use": "@vercel/node" }
-    ],
+    "version": 2,
     "routes": [
-        {
+       {
           "src": "/(.*)",
           "dest": "index.js"
-        }
+       }
+    ],
+    "headers": [
+       { "source": "/register", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "https://artfulrwanda.vercel.app" }] }
+
     ]
-  }
+ }
