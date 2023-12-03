@@ -19,8 +19,13 @@ const dotenv = require("dotenv");
 
 const app = express();
 
-app.use(cors());
-
+app.use(cors(
+  {
+      origin: ["https://deploy-mern-frontend.vercel.app"],
+      methods: ["POST", "GET"],
+      credentials: true
+  }
+));
 
 
 app.use(express.json());
@@ -29,12 +34,6 @@ dotenv.config()
 
 
 
-// Use express-session middleware
-app.use(session({
-  secret: '123', // Change this to a secure key
-  resave: false,
-  saveUninitialized: true,
-}));
 
 
 
@@ -110,6 +109,11 @@ app.post('/logout', (req, res) => {
     }
   });
 });
+
+app.get("/", (req, res) => {
+  res.json("Hello");
+})
+
 
 app.post('/register', (req, res) => {
   const {name, email, password} = req.body;
