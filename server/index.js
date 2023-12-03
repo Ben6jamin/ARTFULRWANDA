@@ -61,6 +61,11 @@ mongoose.connection.on('error', (err) => {
 });
 
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+})
+
+
 
 // Endpoint to like an image
 app.put('/image/like', async (req, res) => {
