@@ -99,10 +99,7 @@ app.get("/", (req, res) => {
 
 
 app.post('/register', (req, res) => {
-  // Set CORS headers
-  res.header('Access-Control-Allow-Origin', 'https://artfulrwanda.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'POST, GET');
-  res.header('Access-Control-Allow-Credentials', true);
+  
 
   const {name, email, password} = req.body;
   EmployeeModel.findOne({email: email})
