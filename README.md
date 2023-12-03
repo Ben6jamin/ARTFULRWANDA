@@ -70,7 +70,7 @@ Start the Backend server:
 
 # Inside the Backend folder
 ```bash
-npm start
+npm run dev
 ```
 Start the Frontend development server:
 
