@@ -47,7 +47,7 @@ const port = process.env.PORT;
 const url =  process.env.Database_URL;
 
 
-const mongoURI=(url);
+const mongoURI="mongodb+srv://Benjamin:123@cluster0.ftdnvds.mongodb.net/?retryWrites=true&w=majority";
 
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -189,7 +189,7 @@ app.post('/logout', (req, res) => {
 
 
 
-app.listen(port, () => {
+app.listen(3001, () => {
     console.log("server is running")
 })
 
