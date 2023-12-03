@@ -18,9 +18,21 @@ const dotenv = require("dotenv");
 
 
 const app = express();
+
+app.use(cors(
+  {
+      origin: ["https://deploy-mern-frontend.vercel.app"],
+      methods: ["POST", "GET"],
+      credentials: true
+  }
+));
+
+
+
 app.use(express.json());
-app.use(cors());
 dotenv.config()
+
+
 
 
 // Use express-session middleware
@@ -142,6 +154,10 @@ app.get('/welcome', (req, res) => {
         res.status(401).json({ message: 'Unauthorized' });
     }
 })
+
+
+
+
 
 
 app.post('/register', (req, res) => {
