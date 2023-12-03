@@ -66,64 +66,11 @@ app.get("/", (req, res) => {
 })
 
 
-
-// Endpoint to like an image
-app.put('/image/like', async (req, res) => {
-  const { imageId, userId } = req.body;
-  await ImageModel.findByIdAndUpdate(imageId, {
-    $push: { likes: userId }
-  });
-  res.send('The image has been liked');
-});
-
-
-
-// Endpoint to unlike an image
-app.put('/image/unlike', async (req, res) => {
-  const { imageId, userId } = req.body;
-  await ImageModel.findByIdAndUpdate(imageId, {
-    $pull: { likes: userId }
-  });
-  res.send('The image has been unliked');
-});
-
-
-// Endpoint to comment on an image
-app.put('/image/comment', async (req, res) => {
-  const { imageId, userId, text } = req.body;
-  const comment = { user: userId, text };
-  await ImageModel.findByIdAndUpdate(imageId, {
-    $push: { comments: comment }
-  });
-  res.send('A comment has been added');
-});
-
-
-// Endpoint to uncomment on an image
-app.put('/image/uncomment', async (req, res) => {
-  const { imageId, commentId } = req.body;
-  await ImageModel.findByIdAndUpdate(imageId, {
-    $pull: { comments: { _id: commentId } }
-  });
-  res.send('The comment has been removed');
-});
-
-
-// Endpoint to get the whole image
-app.get('/image/:id', async (req, res) => {
-  const image = await ImageModel.findById(req.params.id);
-  res.send(image);
-});
-
-
-
-
-
-
-
-
-
-
+app.post('/register', (req, res) => {
+  EmployeeModel.create(req.body)
+  .then(employees => res.json(employees))
+  .catch(err => res.json(err) )
+})
 
 
 
@@ -165,11 +112,6 @@ app.get('/welcome', (req, res) => {
 
 
 
-app.post('/register', (req, res) => {
-    EmployeeModel.create(req.body)
-    .then(employees => res.json(employees))
-    .catch(err => res.json(err) )
-})
 
 
 
