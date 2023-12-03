@@ -42,6 +42,20 @@ mongoose.connection.on('error', (err) => {
 
 
 
+app.post('/register', (req, res) => {
+  const {name, email, password} = req.body;
+    EmployeeModel.findOne({email: email})
+    .then(user => {
+        if(user) {
+            res.json("Already have an account")
+        } else {
+            EmployeeModel.create({name: name, email: email, password: password})
+            .then(result => res.json(result))
+            .catch(err => res.json(err))
+        }
+    }).catch(err => res.json(err))
+  })
+
 
 
 
@@ -99,20 +113,6 @@ app.post('/logout', (req, res) => {
 
 
 
-
-app.post('/register', (req, res) => {
-const {name, email, password} = req.body;
-  EmployeeModel.findOne({email: email})
-  .then(user => {
-      if(user) {
-          res.json("Already have an account")
-      } else {
-          EmployeeModel.create({name: name, email: email, password: password})
-          .then(result => res.json(result))
-          .catch(err => res.json(err))
-      }
-  }).catch(err => res.json(err))
-})
 
 
 
