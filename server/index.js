@@ -103,9 +103,7 @@ app.post('/logout', (req, res) => {
 
 
 app.post('/register', (req, res) => {
-
-
-  const {name, email, password} = req.body;
+const {name, email, password} = req.body;
   EmployeeModel.findOne({email: email})
   .then(user => {
       if(user) {
