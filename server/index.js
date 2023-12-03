@@ -43,8 +43,6 @@ app.use(session({
 }));
 
 
-const port = process.env.PORT;
-const url =  process.env.Database_URL;
 
 
 const mongoURI="mongodb+srv://Benjamin:123@cluster0.ftdnvds.mongodb.net/?retryWrites=true&w=majority";
@@ -61,16 +59,8 @@ mongoose.connection.on('error', (err) => {
 });
 
 
-app.get("/", (req, res) => {
-  res.json("Hello");
-})
 
 
-app.post('/register', (req, res) => {
-  EmployeeModel.create(req.body)
-  .then(employees => res.json(employees))
-  .catch(err => res.json(err) )
-})
 
 
 
@@ -127,6 +117,11 @@ app.post('/logout', (req, res) => {
   });
 });
 
+app.post('/register', (req, res) => {
+  EmployeeModel.create(req.body)
+  .then(employees => res.json(employees))
+  .catch(err => res.json(err) )
+})
 
 
 
