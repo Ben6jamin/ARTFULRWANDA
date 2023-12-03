@@ -93,13 +93,11 @@ app.post('/logout', (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.json("Hello");
-})
+
 
 
 app.post('/register', (req, res) => {
-  
+
 
   const {name, email, password} = req.body;
   EmployeeModel.findOne({email: email})
