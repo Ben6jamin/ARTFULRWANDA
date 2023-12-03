@@ -20,7 +20,7 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/register', {name, email, password})
+    axios.post('https://artfulrwanda.vercel.app/register', {name, email, password})
     .then(res => {console.log(res)
     navigate('/login') })
     .catch(err => {console.log(err)})
