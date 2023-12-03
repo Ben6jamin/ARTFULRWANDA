@@ -6,7 +6,7 @@ const EmployeeModel = require("./models/Employee")
 const app = express();
 
 app.use(cors({
-  origin: ["https://artfulrwanda.vercel.app"],
+  origin: ["https://artfulrwanda.vercel.app/"],
   methods: ["POST", "GET"],
   credentials: true
 }));
