@@ -1,27 +1,13 @@
 const express = require ("express")
 const mongoose = require ("mongoose")
 const cors = require ("cors");
-const session = require('express-session');
 const EmployeeModel = require("./models/Employee")
-const ImageModel = require("./models/Image");
-
-
-
-
-
-
-
-
-
-
-
-
 
 const app = express();
 
 app.use(cors({
   origin: ["https://artfulrwanda.vercel.app"],
-  methods: ["post", "get"],
+  methods: ["POST", "GET"],
   credentials: true
 }));
 
