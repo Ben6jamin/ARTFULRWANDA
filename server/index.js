@@ -19,13 +19,7 @@ const dotenv = require("dotenv");
 
 const app = express();
 
-app.use(cors(
-  {
-      origin: ["https://artfulrwanda-frontend.vercel.app"],
-      methods: ["POST", "GET"],
-      credentials: true
-  }
-));
+app.use(cors());
 
 
 
@@ -118,9 +112,17 @@ app.post('/logout', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-  EmployeeModel.create(req.body)
-  .then(employees => res.json(employees))
-  .catch(err => res.json(err) )
+  const {name, email, password} = req.body;
+  EmployeeModel.findOne({email: email})
+  .then(user => {
+      if(user) {
+          res.json("Already have an account")
+      } else {
+          EmployeeModel.create({name: name, email: email, password: password})
+          .then(result => res.json(result))
+          .catch(err => res.json(err))
+      }
+  }).catch(err => res.json(err))
 })
 
 
