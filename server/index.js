@@ -4,6 +4,7 @@ const cors = require ("cors");
 const session = require('express-session');
 const EmployeeModel = require("./models/Employee")
 const ImageModel = require("./models/Image");
+const dotenv = require("dotenv");
 
 
 
@@ -18,7 +19,8 @@ const ImageModel = require("./models/Image");
 
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+dotenv.config()
 
 
 // Use express-session middleware
@@ -29,10 +31,11 @@ app.use(session({
 }));
 
 
+const port = process.env.PORT;
+const url =  process.env.Database_URL;
 
 
-
-const mongoURI="mongodb+srv://Benjamin:123@cluster0.ftdnvds.mongodb.net/?retryWrites=true&w=majority";
+const mongoURI=(url);
 
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -165,7 +168,7 @@ app.post('/logout', (req, res) => {
 
 
 
-app.listen(3001, () => {
+app.listen(port, () => {
     console.log("server is running")
 })
 
