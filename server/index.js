@@ -8,7 +8,7 @@ const ImageModel = require("./models/Image");
 
 
 
-require('dotenv').config();
+
 
 
 
