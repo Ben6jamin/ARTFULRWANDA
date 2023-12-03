@@ -5,7 +5,13 @@ const EmployeeModel = require("./models/Employee")
 
 const app = express();
 
-app.use(cors({ origin: "https://artfulrwanda.vercel.app/", credentials: true }));
+app.use(cors(
+  {
+      origin: ["https://deploy-mern-frontend.vercel.app"],
+      methods: ["POST", "GET"],
+      credentials: true
+  }
+));
 
 
 
@@ -38,19 +44,7 @@ mongoose.connection.on('error', (err) => {
 
 
 
-app.post('/register', (req, res) => {
-  const {name, email, password} = req.body;
-    EmployeeModel.findOne({email: email})
-    .then(user => {
-        if(user) {
-            res.json("Already have an account")
-        } else {
-            EmployeeModel.create({name: name, email: email, password: password})
-            .then(result => res.json(result))
-            .catch(err => res.json(err))
-        }
-    }).catch(err => res.json(err))
-  })
+
 
 
 
@@ -107,9 +101,23 @@ app.post('/logout', (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+})
 
-
-
+app.post('/register', (req, res) => {
+  const {name, email, password} = req.body;
+    EmployeeModel.findOne({email: email})
+    .then(user => {
+        if(user) {
+            res.json("Already have an account")
+        } else {
+            EmployeeModel.create({name: name, email: email, password: password})
+            .then(result => res.json(result))
+            .catch(err => res.json(err))
+        }
+    }).catch(err => res.json(err))
+  })
 
 
 
