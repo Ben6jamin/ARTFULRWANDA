@@ -17,7 +17,7 @@ function SignUp() {
 
 
 
-
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('https://artfulrwanda-api.vercel.app/register', {name, email, password})
