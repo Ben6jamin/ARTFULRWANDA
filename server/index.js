@@ -21,7 +21,7 @@ const app = express();
 
 app.use(cors({
   origin: ["https://artfulrwanda.vercel.app"],
-  methods: ["POST", "GET"],
+  methods: ["post", "get"],
   credentials: true
 }));
 
