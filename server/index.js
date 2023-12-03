@@ -4,7 +4,7 @@ const cors = require ("cors");
 const session = require('express-session');
 const EmployeeModel = require("./models/Employee")
 const ImageModel = require("./models/Image");
-const dotenv = require("dotenv");
+
 
 
 
@@ -26,7 +26,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-dotenv.config()
+
 
 
 
