@@ -3,42 +3,29 @@ const mongoose = require ("mongoose")
 const cors = require ("cors");
 const EmployeeModel = require("./models/Employee")
 
+require('dotenv').config();
+
 const app = express();
-
-app.use(cors(
-  {
-      origin: ["https://artfulrwanda-frontend.vercel.app/"],
-      methods: ["POST", "GET"],
-      credentials: true
-  }
-));
-
-
-
-
-
+app.use(cors({}));
 app.use(express.json());
 
+const mongoURI = process.env.MONGO_URI;
 
-
-
-
-
-
-
-
-const mongoURI="mongodb+srv://Benjamin:123@cluster0.ftdnvds.mongodb.net/?retryWrites=true&w=majority";
-
-
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURI);
 
 mongoose.connection.on('connected', () => {
     console.log('Connected to MongoDB Atlas');
 });
 
 mongoose.connection.on('error', (err) => {
-    console.error(`MongoDB connection error: ${err}`);
+    console.error('MongoDB connection error:', err.message);
 });
+
+
+
+
+
+
 
 
 
